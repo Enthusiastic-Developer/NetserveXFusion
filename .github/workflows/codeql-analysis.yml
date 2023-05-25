@@ -13,12 +13,10 @@ name: "CodeScan"
 
 on:
   push:
-    branches: [ main ]
+    branches: [ EDdevelopment ]
   pull_request:
     # The branches below must be a subset of the branches above
-    branches: [ main ]
-  schedule:
-    - cron: '23 16 * * 1'
+    branches: [ EDdevelopment ]
 
 jobs:
   analyze:
@@ -32,7 +30,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        language: [  ]
+        language: [ 'csharp', 'javascript' ]
         # CodeQL supports [ 'cpp', 'csharp', 'go', 'java', 'javascript', 'python', 'ruby' ]
         # Learn more about CodeQL language support at https://git.io/codeql-language-support
 
