@@ -1,3 +1,5 @@
+[![CodeScan](https://github.com/Enthusiastic-Developer/NetserveXFusion/actions/workflows/codeql-analysis.yml/badge.svg?branch=EDdevelopment)](https://github.com/Enthusiastic-Developer/NetserveXFusion/actions/workflows/codeql-analysis.yml)
+
 We will develop e-commerce modules over Product, Basket and Ordering microservices with NoSQL (MongoDB, Redis) and Relational databases (PostgreSQL, Sql Server) with communicating over RabbitMQ Event Driven Communication and using Ocelot API Gateway.
 
 #### Catalog microservice which includes; 
