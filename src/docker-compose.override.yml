@@ -8,7 +8,7 @@ services:
       - "27017:27017"
     volumes:
       - mongo_data:/data/db
-  
+
   basketdb:
     container_name: basketdb
     restart: always
@@ -40,8 +40,8 @@ services:
     container_name: rabbitmq
     restart: always
     ports:
-      - "15672:15672"
-      - "5672:5672"
+        - "5672:5672"
+        - "15672:15672"
 
   pgadmin:
     container_name: pgadmin
@@ -87,7 +87,6 @@ services:
     ports:
       - "8001:80"
 
-
   discount.api:
     container_name: discount.api
     environment:
@@ -98,7 +97,6 @@ services:
     ports:
       - "8002:80"
 
-
   discount.grpc:
     container_name: discount.grpc
     environment:
@@ -108,7 +106,6 @@ services:
       - discountdb
     ports:
       - "8003:80"
-
 
   ordering.api:
     container_name: ordering.api
@@ -122,3 +119,14 @@ services:
     ports:
         - "8004:80"
 
+  ocelotapigw:
+    container_name: ocelotapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+        - catalog.api
+        - basket.api
+        - discount.api
+        - ordering.api
+    ports:
+      - "8010:80"
