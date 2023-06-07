@@ -64,8 +64,15 @@ services:
       context: .
       dockerfile: ApiGateways/Shopping.Aggregator/Dockerfile
 
+  netservexfusion.ui:
+    image: ${DOCKER_REGISTRY-}netservexfusionui
+    build:
+      context: .
+      dockerfile: WebApps/NetserveXFusion.UI/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:
   postgres_data:
   pgadmin_data:
+    
